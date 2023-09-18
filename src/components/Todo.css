@@ -1,0 +1,78 @@
+body {
+  font-family: sans-serif;
+}
+.container {
+    width: 90%; 
+    max-width: 400px; 
+    background-color: rgb(37, 55, 85);
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+h2 {
+  text-align: center;
+  color: white;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  padding-left: 9px;
+}
+
+.form-control {
+  font-family: cursive;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  margin-left: 10px;
+  color: #0c0101;
+  background-color: rgb(254, 248, 247);
+  border-radius: 5px;
+  padding: 10px;
+  width: 90px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.list {
+  margin-right: 10px;
+  margin-top: 30px !important;
+}
+
+li {
+  margin-bottom: 15px;
+  margin-left: -29px;
+  background-color: rgb(250, 243, 243) !important;
+  color: rgb(0, 0, 0) !important;
+  border: none !important;
+  list-style: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 280px;
+}
+.list-items {
+  display: flex;
+}
+.list-items .list-item-list {
+  flex: 1;
+}
+.list-items .list-item-icons {
+  padding-left: 5px;
+  font-size: 25px;
+}
+#list-item {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

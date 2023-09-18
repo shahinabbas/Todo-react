@@ -1,6 +1,13 @@
 body {
   font-family: sans-serif;
 }
+.head h2 {
+    color: #644242; 
+    font-size: 40px; 
+    text-align: center;
+    padding-top: 43px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .container {
     width: 90%; 
     max-width: 400px; 
@@ -8,18 +15,20 @@ body {
     border-radius: 10px;
     position: absolute;
     left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
+    top: 25%;
+    transform: translate(-49%, 0);
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  
-h2 {
+
+.container h2 {
+  padding-top: 10px;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .form-group {
@@ -30,13 +39,16 @@ h2 {
 }
 
 .form-control {
+    margin-top: 30px;
   font-family: cursive;
   border-radius: 10px;
   border: none;
+  padding: 10px;
 }
 
 button {
   margin-left: 10px;
+  margin-top: 30px;
   color: #0c0101;
   background-color: rgb(254, 248, 247);
   border-radius: 5px;

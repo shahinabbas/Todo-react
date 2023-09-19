@@ -8,10 +8,22 @@ import { TiTick } from "react-icons/ti";
 function Todo() {
     const [todo, setTodo] = useState("")
     const [todos, setTodos] = useState([])
+    const [editId, setEditId] = useState(0)
 
     const addTodo = () => {
-        setTodos([...todos, { list: todo, id: Date.now(), status: false }])
-        setTodo('')
+        if (todo !== '') {
+            setTodos([...todos, { list: todo, id: Date.now(), status: false }])
+            setTodo('')
+        }
+        if (editId) {
+            const editTodo = todos.find((todo) => todo.id == editId)
+            const updateTodo = todos.map((to) => to.id === editTodo.id
+                ? (to = { id: to.id, list: todo })
+                : (to = { id: to.id, list: to.list }))
+            setTodos(updateTodo)
+            setEditId(0)
+            setTodo('')
+        }
     }
 
     const handleSubmit = (e) => {
@@ -35,9 +47,11 @@ function Todo() {
         })
         setTodos(complete)
     }
-    // const onEdit = (id => {
-    //     setTodos([...todos,])
-    // })
+    const onEdit = ((id) => {
+        const editTodo = todos.find((to) => to.id === id)
+        setTodo(editTodo.list)
+        setEditId(editTodo.id)
+    })
 
     return (
         <div className='head'><h2>Organize  your  work  and  life.</h2>
@@ -45,7 +59,7 @@ function Todo() {
                 <h2>Todo</h2>
                 <form className='form-group' onSubmit={handleSubmit}>
                     <input type='text' value={todo} ref={inputRef} placeholder='Enter task....' className='form-control' onChange={(event) => setTodo(event.target.value)} />
-                    <button onClick={addTodo}>Add</button>
+                    <button onClick={addTodo}>{editId ? 'Edit' : 'Add'}</button>
                 </form>
                 <div>
                     <ul className='list'>
@@ -55,7 +69,7 @@ function Todo() {
                                     <div className='list-item-list' id={to.status ? 'list-item' : ''}>{to.list}</div>
                                     <span>
                                         <TiTick className='list-item-icons' id='complete' title='completr' onClick={() => onComplete(to.id)} />
-                                        <AiFillEdit className='list-item-icons' id='edit' title='edit' onClick={() => ondevicemotion(to.id)} />
+                                        <AiFillEdit className='list-item-icons' id='edit' title='edit' onClick={() => onEdit(to.id)} />
                                         <AiFillDelete className='list-item-icons' id='delete' title='delete' onClick={() => onDelete(to.id)} />
                                     </span>
                                 </li>
@@ -63,10 +77,10 @@ function Todo() {
                         }
                     </ul>
                 </div>
-                
+
             </div>
         </div>
-        
+
     )
 }
 export default Todo

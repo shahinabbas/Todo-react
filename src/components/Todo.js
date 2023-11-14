@@ -61,24 +61,28 @@ function Todo() {
                     <input type='text' value={todo} ref={inputRef} placeholder='Enter task....' className='form-control' onChange={(event) => setTodo(event.target.value)} />
                     <button onClick={addTodo}>{editId ? 'Edit' : 'Add'}</button>
                 </form>
-                <div>
-                    <ul className='list'>
-                        {
-                            todos.map((to) => (
-                                <li className='list-items'>
-                                    <div className='list-item-list' id={to.status ? 'list-item' : ''}>{to.list}</div>
-                                    <span>
-                                        <TiTick className='list-item-icons' id='complete' title='completr' onClick={() => onComplete(to.id)} />
-                                        <AiFillEdit className='list-item-icons' id='edit' title='edit' onClick={() => onEdit(to.id)} />
-                                        <AiFillDelete className='list-item-icons' id='delete' title='delete' onClick={() => onDelete(to.id)} />
-                                    </span>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-
             </div>
+
+            <div className='lists'>
+                {todos.length > 0 ? (
+                    <ul className='list'>
+                        {todos.map((to) => (
+                            <li className='list-items'>
+                                <div className='list-item-list' id={to.status ? 'list-item' : ''}>{to.list}</div>
+                                <span>
+                                    <TiTick className='list-item-icons' id='complete' title='complete' onClick={() => onComplete(to.id)} />
+                                    <AiFillEdit className='list-item-icons' id='edit' title='edit' onClick={() => onEdit(to.id)} />
+                                    <AiFillDelete className='list-item-icons' id='delete' title='delete' onClick={() => onDelete(to.id)} />
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No items to display</p>
+                )}
+            </div>
+
+
         </div>
 
     )

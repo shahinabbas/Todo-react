@@ -2,33 +2,50 @@ body {
   font-family: sans-serif;
 }
 .head h2 {
-    color: #644242; 
-    font-size: 40px; 
-    text-align: center;
-    padding-top: 43px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #14b789;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 43px;
+  font-family: monospace;
 }
 .container {
-    width: 90%; 
-    max-width: 400px; 
-    background-color: rgb(37, 55, 85);
-    border-radius: 10px;
-    position: absolute;
-    left: 50%;
-    top: 25%;
-    transform: translate(-49%, 0);
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
+  width: 90%;
+  max-width: 400px;
+  background-color: #7c85ca;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  bottom: 47%;
+  transform: translate(-49%, 0);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.lists {
+  width: 90%;
+  max-width: 400px;
+  background-color: #7c85ca;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: calc(54% + 10px); /* Adjust the top value to create spacing */
+  transform: translate(-49%, 0);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 
 .container h2 {
   padding-top: 10px;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .form-group {
@@ -39,16 +56,16 @@ body {
 }
 
 .form-control {
-    margin-top: 30px;
+  margin-top: 10px;
   font-family: cursive;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   padding: 10px;
 }
 
 button {
   margin-left: 10px;
-  margin-top: 30px;
+  margin-top: 10px;
   color: #0c0101;
   background-color: rgb(254, 248, 247);
   border-radius: 5px;
@@ -56,6 +73,11 @@ button {
   width: 90px;
   font-weight: bold;
   cursor: pointer;
+  border: none;
+}
+
+input:focus {
+  outline: none;
 }
 
 .list {
@@ -66,7 +88,7 @@ button {
 li {
   margin-bottom: 15px;
   margin-left: -29px;
-  background-color: rgb(250, 243, 243) !important;
+  background-color: rgb(255, 255, 255) !important;
   color: rgb(0, 0, 0) !important;
   border: none !important;
   list-style: none;
